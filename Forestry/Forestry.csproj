@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>BalintN</Authors>
+    <Company />
+    <Description>Foresty implements generic functionality for tree- or forest-like structures, like depth-first and breadth-first traverses.</Description>
+    <Copyright>Balint Nagy</Copyright>
+    <RepositoryUrl>https://github.com/balintn22/Forestry</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/balintn22/Forestry/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/balintn22/Forestry</PackageProjectUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageReleaseNotes>Fixes.</PackageReleaseNotes>
+    <Version>1.0.2</Version>
+  </PropertyGroup>
+
+</Project>

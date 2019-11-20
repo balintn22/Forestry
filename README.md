@@ -1,9 +1,12 @@
 # Forestry
+
 Implements generic support for tree- or forest-like structures.
 
 Available as a nuget package as Forestry.
 
+
 #Usage Example
+
 Assuming you have a type to represent a tree node like this
     class TextNode
     {
@@ -19,11 +22,15 @@ Assuming you have a type to represent a tree node like this
         new TextNode{ Id = "2", ParentId = null },
         new TextNode{ Id = "21", ParentId = "2" },
     };
-    
+
+    // You create a visitor by specifying a child accessor: a method to -
+    //havong a node - fetches child nodes.
     IForestVisitor<TextNode> visitor = new ForestVisitor<TextNode>(node =>
         _nodes.Where(n => n.ParentId == node.Id)
     );
 
+    // With that little help, Forestry can perform various tree or forest
+    // walks of your tree.
     var rootNodes = _nodes.Where(node => node.ParentId == null);
     Console.WriteLine("Visiting nodes depth first...");
     visitor.VisitDepthFirst(
@@ -41,6 +48,7 @@ Assuming you have a type to represent a tree node like this
         node => Console.WriteLine(node.Id));
 
 Will print this:
+
 Visiting nodes depth first...
 1
 11

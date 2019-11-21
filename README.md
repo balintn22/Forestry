@@ -1,11 +1,14 @@
 # Forestry
 
-Implements generic support for tree- or forest-like structures.
+Implements generic support for tree- or forest-like structures, usin gtwo different approaches:
+First, there is an enumeration extension, to be used much like LINQ.
+Second, there is a visitor approach, to invoke a method for each node in order.
+Supports depth-first, breadth-first and bottom-up ordered walks.
 
 Available as a nuget package as Forestry.
 
 
-#Usage Example
+# Usage Example for the visitor approach
 
 Assuming you have a type to represent a tree node like this
     class TextNode
@@ -24,7 +27,7 @@ Assuming you have a type to represent a tree node like this
     };
 
     // You create a visitor by specifying a child accessor: a method to -
-    //havong a node - fetches child nodes.
+    // having a node - fetches child nodes.
     IForestVisitor<TextNode> visitor = new ForestVisitor<TextNode>(node =>
         _nodes.Where(n => n.ParentId == node.Id)
     );
@@ -47,7 +50,7 @@ Assuming you have a type to represent a tree node like this
         rootNodes,
         node => Console.WriteLine(node.Id));
 
-Will print this:
+will print this:
 
 Visiting nodes depth first...
 1
@@ -67,3 +70,19 @@ Visiting nodes depth first...
 11
 2
 1
+
+# Usage example for the enumerator approach
+
+Assuming the same node collection as above, you can write
+    var rootNodes = target.Where(node => node.ParentId == null);
+    foreach(var node in target.DepthFirst(
+            x => target.Where(other => x.Id.Equals(other.ParentId)),
+            rootNodes)
+        Console.WriteLine(node.Id);
+
+will print
+1
+11
+12
+2
+21

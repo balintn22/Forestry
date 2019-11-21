@@ -1,19 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard1.1;net40;net451</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>BalintN</Authors>
     <Company />
-    <Description>Foresty implements generic functionality for tree- or forest-like structures, like depth-first and breadth-first traverses.</Description>
+    <Description>Foresty implements generic functionality for tree- or forest-like structures, like depth-first and breadth-first traverses. It provides two approaches: enumerators for Linq-like, ordered node enumerations and visitors to invoke functions for each node in order. Supports .Net Framework 4.0, 4.5+ and dotnet core 1 and 2.</Description>
     <Copyright>Balint Nagy</Copyright>
     <RepositoryUrl>https://github.com/balintn22/Forestry</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/balintn22/Forestry/blob/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/balintn22/Forestry</PackageProjectUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageReleaseNotes>Fixes.</PackageReleaseNotes>
-    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Retargeted to .Net Standard 1.1 to support earlier client app versions like .Net Framework 4.5.2.</PackageReleaseNotes>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
 </Project>

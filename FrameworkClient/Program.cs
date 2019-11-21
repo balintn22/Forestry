@@ -22,8 +22,20 @@ namespace FrameworkClient
                 _nodes.Where(n => n.ParentId == node.Id)
             );
 
+            var rootNodes = _nodes.Where(node => node.ParentId == null);
+            Console.WriteLine("Visiting nodes depth first...");
             visitor.VisitDepthFirst(
-                _nodes.Where(node => node.ParentId == null),
+                rootNodes,
+                node => Console.WriteLine(node.Id));
+
+            Console.WriteLine("... breadth first ...");
+            visitor.VisitBreadthFirst(
+                rootNodes,
+                node => Console.WriteLine(node.Id));
+
+            Console.WriteLine("... and bottom up.");
+            visitor.VisitBottomUp(
+                rootNodes,
                 node => Console.WriteLine(node.Id));
         }
     }

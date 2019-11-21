@@ -4,20 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Klinng.Trees.Visitor.Tests
+namespace ForestryTest
 {
-    public class TestNode
-    {
-        public string Id;
-        public string ParentId;
-        public TestNode(string parentId, string id)
-        {
-            Id = id;
-            ParentId = parentId;
-        }
-    }
-
-
     [TestClass()]
     public class ForestVisitorTests
     {
@@ -88,7 +76,7 @@ namespace Klinng.Trees.Visitor.Tests
         }
 
         [TestMethod()]
-        public void VisitBottomUp_Test()
+        public void VisitBottomUp_ShouldWalkInCorrectOrder()
         {
             var visitedOrder = new List<string>();
             var forestNodes = CreateForestNodes();

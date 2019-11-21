@@ -8,7 +8,7 @@ Supports depth-first, breadth-first and bottom-up ordered walks.
 Available as a nuget package as Forestry.
 
 
-#Usage Example for the visitor approach
+# Usage Example for the visitor approach
 
 Assuming you have a type to represent a tree node like this
     class TextNode
@@ -50,7 +50,7 @@ Assuming you have a type to represent a tree node like this
         rootNodes,
         node => Console.WriteLine(node.Id));
 
-Will print this:
+will print this:
 
 Visiting nodes depth first...
 1
@@ -71,7 +71,7 @@ Visiting nodes depth first...
 2
 1
 
-#Usage example for the enumerator approach
+# Usage example for the enumerator approach
 
 Assuming the same node collection as above, you can write
     var rootNodes = target.Where(node => node.ParentId == null);

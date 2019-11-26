@@ -1,8 +1,11 @@
 # Forestry
 
-Implements generic support for tree- or forest-like structures, usin gtwo different approaches:
+Implements generic support for tree- or forest-like structures, using two different approaches:
+
 First, there is an enumeration extension, to be used much like LINQ.
+
 Second, there is a visitor approach, to invoke a method for each node in order.
+
 Supports depth-first, breadth-first and bottom-up ordered walks.
 
 Available as a nuget package as Forestry.
@@ -53,23 +56,23 @@ Assuming you have a type to represent a tree node like this
 will print this:
 
 Visiting nodes depth first...
-1
-11
-12
-2
-21
+ 1
+ 11
+ 12
+ 2
+ 21
 ... breadth first ...
-1
-2
-11
-12
-21
+ 1
+ 2
+ 11
+ 12
+ 21
 ... and bottom up.
-21
-12
-11
-2
-1
+ 21
+ 12
+ 11
+ 2
+ 1
 
 # Usage example for the enumerator approach
 
@@ -81,8 +84,8 @@ Assuming the same node collection as above, you can write
         Console.WriteLine(node.Id);
 
 will print
-1
-11
-12
-2
-21
+ 1
+ 11
+ 12
+ 2
+ 21

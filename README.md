@@ -8,7 +8,7 @@ Second, there is a visitor approach, to invoke a method for each node in order.
 
 Supports depth-first, breadth-first and bottom-up ordered walks.
 
-Available as a nuget package as Forestry.
+Available as a nuget package called Forestry.
 
 
 # Usage Example for the visitor approach

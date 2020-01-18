@@ -30,7 +30,7 @@ Assuming you have a type to represent a tree node like this
     };
 
     // You create a visitor by specifying a child accessor: a method to -
-    // having a node - fetches child nodes.
+    // having a node - fetch child nodes.
     IForestVisitor<TextNode> visitor = new ForestVisitor<TextNode>(node =>
         _nodes.Where(n => n.ParentId == node.Id)
     );
